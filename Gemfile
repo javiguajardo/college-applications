@@ -54,6 +54,8 @@ group :development do
   gem 'annotate', '~> 2.7', '>= 2.7.1'
   # rspec command for spring
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
+  # Provides a better error page for Rails and other Rack apps.
+  gem 'better_errors', '~> 2.4'
 end
 
 group :test do
@@ -66,5 +68,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-# Flexible authentication solution for Rails with Warden
 gem 'devise'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+# Search Engine Optimization (SEO) plugin for Ruby on Rails applications.
+gem 'meta-tags'
+gem 'font-awesome-sass', '~> 5.0.9'

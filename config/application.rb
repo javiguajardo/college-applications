@@ -30,5 +30,11 @@ module CollegeApplications
         routing_specs: false,
         request_specs: false
     end
+
+    if Rails.configuration.respond_to?(:sass)
+      Rails.configuration.sass.tap do |config|
+        config.preferred_syntax = :sass
+      end
+    end
   end
 end
