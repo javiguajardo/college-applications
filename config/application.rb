@@ -15,6 +15,10 @@ module CollegeApplications
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    I18n.available_locales = [:es, :en]
+    config.time_zone = 'America/Chihuahua'
+    config.i18n.default_locale = :en
 
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')

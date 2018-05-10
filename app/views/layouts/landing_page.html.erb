@@ -7,11 +7,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <%= display_meta_tags site: 'College Applications' %>
+    <%= display_meta_tags site: t('defaults.site_name') %>
     <%= favicon_link_tag('favicon-institution.ico') %>
   </head>
 
-  <body>
+  <body class="text-center" cz-shortcut-listen="true">
     <%= yield %>
   </body>
 </html>
