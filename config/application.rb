@@ -22,5 +22,13 @@ module CollegeApplications
         ENV[key.to_s] = value
       end if File.exists?(env_file)
     end
+
+    config.generators do |g|
+      g.test_framework :rspec,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false,
+        request_specs: false
+    end
   end
 end
