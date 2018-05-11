@@ -1,0 +1,17 @@
+<div class="row">
+  <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <%= icon('fas', 'home') %>
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <%= link_to '<i class="fas fa-university"></i> Institutions'.html_safe, institutions_path, class: 'nav-link' %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

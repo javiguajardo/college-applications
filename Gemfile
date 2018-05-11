@@ -71,6 +71,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap-datepicker-rails', '~> 1.5'
 gem 'jquery-rails'
 # Search Engine Optimization (SEO) plugin for Ruby on Rails applications.
 gem 'meta-tags'

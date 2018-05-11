@@ -10,4 +10,8 @@ module ApplicationHelper
   def page_title
     @title || controller_name.gsub(/Controller/, "").humanize
   end
+
+  def current_year
+    DateTime.current.year
+  end
 end

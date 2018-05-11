@@ -17,13 +17,18 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
 @import "tools/fonts";
 @import "tools/vars";
+@import "bootstrap-datepicker";
 
 // Basic
 @import "basic/base";
 @import "basic/typography";
 
 // Pages
-@import "pages/home";
+@import "pages/institutions";
+
+// Components
+@import "components/dashboard";
+@import "components/footer";
+@import "components/tables";

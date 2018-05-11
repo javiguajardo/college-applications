@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header">
+    <h3><%= @institution.name %></h3>
+  </div>
+  <div class="card-body">
+    <p>
+      <strong>Mascot:</strong>
+      <%= @institution.mascot %>
+    </p>
+
+    <p>
+      <strong>Application deadline:</strong>
+      <%= @institution.application_deadline %>
+    </p>
+
+    <p>
+      <strong>Essay prompt:</strong>
+      <%= @institution.essay_prompt %>
+    </p>
+
+    <p>
+      <strong>Location:</strong>
+      <%= @institution.location %>
+    </p>
+  </div>
+  <div class="card-footer">
+    <%= link_to "<i class='fas fa-edit'></i> Edit".html_safe, edit_institution_path(@institution),
+                class: 'btn btn-sm btn-secondary btn-flat', title: t('defaults.edit') %>
+    <%= link_to "<i class='fas fa-list-ul'></i> #{t('institutions.index.title')}".html_safe, institutions_path,
+                class: 'btn btn-sm btn-info btn-flat', title: t('institutions.form.institutions_list') %>
+  </div>
+</div>

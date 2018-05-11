@@ -1,0 +1,63 @@
+div.actions {
+  text-align: center;
+  .btn.btn-xs {
+    margin-right: 2px;
+  }
+}
+
+.show-actions:hover .actions {
+  display: block;
+}
+
+.show-actions {
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  transition: all 300ms ease;
+  .actions {
+    .btn-simple {
+      border: 0;
+      font-size: 16px;
+      padding: 0px 4px;
+      vertical-align: middle;
+      background-color: transparent;
+      opacity: .36;
+      -webkit-transition: all 300ms ease;
+      -moz-transition: all 300ms ease;
+      transition: all 300ms ease;
+    }
+
+    .btn-primary {
+      color: #3c8dbc;
+      &:hover {
+        color: #367fa9;
+      }
+    }
+    .btn-success {
+      color: #00a65a;
+      &:hover {
+        color: #008d4c;
+      }
+    }
+    .btn-info {
+      color: #00c0ef;
+      &:hover {
+        color: #00acd6;
+      }
+    }
+    .btn-warning {
+      color: #ec971f;
+      &:hover {
+        color: #d58512;
+      }
+    }
+    .btn-danger {
+      color: #dd4b39;
+      &:hover {
+        color: #d73925;
+      }
+    }
+  }
+  &:hover .btn-simple{
+    opacity: 1;
+  }
+}

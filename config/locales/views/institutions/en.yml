@@ -1,0 +1,11 @@
+en:
+  institutions:
+    index:
+      title: Institutions
+    form:
+      resource: institution
+      institutions_list: Institutions list
+    new:
+      title: New Institution
+    edit:
+      title: Edit Institution

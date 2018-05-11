@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-header">
+    <h3><%= t('.title') %></h3>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Mascot</th>
+          <th scope="col">Application deadline</th>
+          <th scope="col">Essay prompt</th>
+          <th scope="col">Location</th>
+          <th scope="col" class="text-center">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      <% @institutions.each do |institution| %>
+        <tr class="show-actions">
+          <td><%= institution.name %></td>
+          <td><%= institution.mascot %></td>
+          <td><%= institution.application_deadline %></td>
+          <td><%= institution.essay_prompt %></td>
+          <td><%= institution.location %></td>
+          <td>
+            <div class="actions">
+              <%= link_to icon('fas', 'eye'), institution, class: 'btn-success btn-simple', title: t('defaults.show') %>
+              <%= link_to icon('fas', 'edit'), edit_institution_path(institution), class: 'btn-primary btn-simple',
+                          title: t('defaults.edit') %>
+              <%= link_to icon('fas', 'trash'), institution, method: :delete, data: {confirm: 'Are you sure?'},
+                          class: 'btn-danger btn-simple', title: t('defaults.delete') %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+  </div>
+  <div class="card-footer">
+    <%= link_to new_institution_path, class: 'btn btn-sm btn-info btn-flat', title: t('defaults.new') do %>
+      <%= icon('fas', 'plus') %>
+      <span class="hidden-xs">New</span>
+    <% end %>
+  </div>
+</div>

@@ -27,3 +27,21 @@
 
 # Ignore ENV variables
 /config/local_env.yml
+
+# Ignore pow environment settings.
+.powenv
+
+# Ignore IDE's settings.
+/.idea
+/nbproject
+
+# Ignore some OS files.
+*.swp
+*~
+.DS_Store
+
+# Ignore SASS cache files.
+.sass-cache
+
+# Ignore auto generated directories on public.
+/public/**
