@@ -1,5 +1,5 @@
 module Uscs
-  def self.state_to_cities
+  def self.cities
     cities_with_state = []
 
     self.us_states.each do |state|
@@ -10,7 +10,7 @@ module Uscs
       end
     end
 
-    cities_with_state.flatten
+    cities_with_state
   end
 
   private

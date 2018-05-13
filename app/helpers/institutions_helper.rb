@@ -3,7 +3,7 @@ module InstitutionsHelper
     date.strftime('%-B %-d, %Y')
   end
 
-  def us_state_to_cities
-    Uscs.state_to_cities
+  def us_cities
+    Uscs.cities
   end
 end

@@ -57,6 +57,7 @@ group :development do
   gem 'spring-commands-rspec', '~> 1.0', '>= 1.0.4'
   # Provides a better error page for Rails and other Rack apps.
   gem 'better_errors', '~> 2.4'
+  gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 end
 
 group :test do
@@ -81,3 +82,5 @@ gem 'client_side_validations', '11.1.2'
 gem 'city-state', '~> 0.0.13'
 # Select2 is a jQuery based replacement for select boxes.
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
+# Extends Rails seeds to split out complex seeds into multiple files and lets each environment have it's own seeds.
+gem 'seedbank', '~> 0.4.0'
