@@ -7,10 +7,11 @@
       <thead>
         <tr>
           <th scope="col">Name</th>
+          <th scope="col">Location</th>
           <th scope="col">Mascot</th>
           <th scope="col">Application deadline</th>
           <th scope="col">Essay prompt</th>
-          <th scope="col">Location</th>
+          <th scope="col">Notes</th>
           <th scope="col" class="text-center">Actions</th>
         </tr>
       </thead>
@@ -19,10 +20,11 @@
       <% @institutions.each do |institution| %>
         <tr class="show-actions">
           <td><%= institution.name %></td>
-          <td><%= institution.mascot %></td>
-          <td><%= institution.application_deadline %></td>
-          <td><%= institution.essay_prompt %></td>
           <td><%= institution.location %></td>
+          <td><%= institution.mascot %></td>
+          <td><%= format_date(institution.application_deadline) %></td>
+          <td><%= institution.essay_prompt %></td>
+          <td><%= institution.notes %></td>
           <td>
             <div class="actions">
               <%= link_to icon('fas', 'eye'), institution, class: 'btn-success btn-simple', title: t('defaults.show') %>

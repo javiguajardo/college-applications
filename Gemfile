@@ -76,3 +76,8 @@ gem 'jquery-rails'
 # Search Engine Optimization (SEO) plugin for Ruby on Rails applications.
 gem 'meta-tags'
 gem 'font-awesome-sass', '~> 5.0.9'
+# ClientSideValidations for Ruby on Rails
+gem 'client_side_validations', '11.1.2'
+gem 'city-state', '~> 0.0.13'
+# Select2 is a jQuery based replacement for select boxes.
+gem 'select2-rails', '~> 4.0', '>= 4.0.3'

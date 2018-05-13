@@ -40,5 +40,9 @@ module CollegeApplications
         config.preferred_syntax = :sass
       end
     end
+
+    # Loads the /lib path for custom Classes
+    config.enable_dependency_loading = true
+    config.autoload_paths << Rails.root.join('lib')
   end
 end

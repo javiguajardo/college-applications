@@ -17,4 +17,6 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
+//= require rails.validations
+//= require select2
 //= require_tree .

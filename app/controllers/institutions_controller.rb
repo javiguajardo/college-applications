@@ -4,7 +4,7 @@ class InstitutionsController < ApplicationController
   # GET /institutions
   # GET /institutions.json
   def index
-    @institutions = Institution.all
+    @institutions = Institution.all.order(:name)
   end
 
   # GET /institutions/1
@@ -69,6 +69,6 @@ class InstitutionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def institution_params
-      params.require(:institution).permit(:name, :mascot, :application_deadline, :essay_prompt, :location)
+      params.require(:institution).permit(:name, :mascot, :application_deadline, :essay_prompt, :location, :notes)
     end
 end

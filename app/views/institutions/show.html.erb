@@ -4,13 +4,18 @@
   </div>
   <div class="card-body">
     <p>
+      <strong>Location:</strong>
+      <%= @institution.location %>
+    </p>
+
+    <p>
       <strong>Mascot:</strong>
       <%= @institution.mascot %>
     </p>
 
     <p>
       <strong>Application deadline:</strong>
-      <%= @institution.application_deadline %>
+      <%= format_date(@institution.application_deadline) %>
     </p>
 
     <p>
@@ -19,9 +24,10 @@
     </p>
 
     <p>
-      <strong>Location:</strong>
-      <%= @institution.location %>
+      <strong>Notes:</strong>
+      <%= @institution.notes %>
     </p>
+
   </div>
   <div class="card-footer">
     <%= link_to "<i class='fas fa-edit'></i> Edit".html_safe, edit_institution_path(@institution),
