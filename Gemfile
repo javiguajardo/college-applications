@@ -84,3 +84,6 @@ gem 'city-state', '~> 0.0.13'
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 # Extends Rails seeds to split out complex seeds into multiple files and lets each environment have it's own seeds.
 gem 'seedbank', '~> 0.4.0'
+# will_paginate provides a simple API for performing paginated queries
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'bootstrap-will_paginate'
