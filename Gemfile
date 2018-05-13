@@ -42,6 +42,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # rspec-rails is a testing framework for Rails 3.x and 4.x.
   gem 'rspec-rails', '~> 3.7'
+  gem 'factory_girl_rails', '~> 4.8.0'
 end
 
 group :development do
