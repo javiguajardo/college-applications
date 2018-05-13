@@ -7,7 +7,7 @@ activeNavLink = ->
   $('.nav li a').each ->
     $this = $(this)
 
-    if $this.attr('href').indexOf(current) != -1
+    if $this.attr('href') == current
       $this.addClass('active')
     return
   return
