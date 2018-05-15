@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :student do
-    name "MyString"
-    email "MyString"
-    phone_number "MyString"
-    date_of_birth "2018-05-14"
-    graduation_date "2018-05-14"
+    name 'Javier Guajardo'
+    email 'f.javi.guajardo@gmail.com'
+    date_of_birth '1994-02-02'
+    graduation_date '2017-05-30'
+    phone_number '(636) 109 - 3561'
   end
 end
