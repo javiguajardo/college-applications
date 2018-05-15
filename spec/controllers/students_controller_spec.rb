@@ -29,11 +29,23 @@ RSpec.describe StudentsController, type: :controller do
   # Student. As you add validations to Student, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+      name: 'Javier Guajardo',
+      email: 'f.javi.guajardo@gmail.com',
+      date_of_birth: '1994-02-02',
+      graduation_date: '2017-05-30',
+      phone_number: '(636) 109 - 3561'
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+        name: nil,
+        email: 'f.javi.guajardo@',
+        date_of_birth: '1994',
+        graduation_date: nil,
+        phone_number: '(636)1093561'
+    }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -97,14 +109,15 @@ RSpec.describe StudentsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+            name: 'Tim Jones'
+        }
       }
 
       it "updates the requested student" do
         student = Student.create! valid_attributes
         put :update, params: {id: student.to_param, student: new_attributes}, session: valid_session
-        student.reload
-        skip("Add assertions for updated state")
+        expect(student.reload.name).to eq('Tim Jones')
       end
 
       it "redirects to the student" do
