@@ -29,11 +29,21 @@ RSpec.describe InstitutionsController, type: :controller do
   # Institution. As you add validations to Institution, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {
+        name: 'University of California, Los Angeles',
+        location: 'Los Angeles, California',
+        application_deadline: '2018-08-15',
+        essay_prompt: 'Lorem Ipsum',
+        notes: 'Lorem Ipsum'
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+        name: '',
+        application_deadline: '123',
+        location: ''
+    }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -97,14 +107,15 @@ RSpec.describe InstitutionsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+            name: 'University of New York'
+        }
       }
 
       it "updates the requested institution" do
         institution = Institution.create! valid_attributes
         put :update, params: {id: institution.to_param, institution: new_attributes}, session: valid_session
-        institution.reload
-        skip("Add assertions for updated state")
+        expect(institution.reload.name).to eq('University of New York')
       end
 
       it "redirects to the institution" do
