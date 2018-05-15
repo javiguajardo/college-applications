@@ -21,6 +21,10 @@ class Student < ApplicationRecord
   validates_uniqueness_of :email, :phone_number, case_sensitive: false
   validate :graduation_date_after_date_of_birth?
 
+  has_many :student_applications, dependent: :destroy
+  has_many :institutions, through: :student_applications
+  accepts_nested_attributes_for :student_applications
+
   private
 
   def graduation_date_after_date_of_birth?

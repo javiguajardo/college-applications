@@ -49,6 +49,17 @@
       </div>
     </div>
 
+    <%= form.fields_for :student_applications do |application| %>
+      <%= render 'student_application_fields', f: application %>
+    <% end %>
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <%= link_to_add_fields('Add application', form, :student_applications) %>
+
+      </div>
+    </div>
+
     <div class="form-group row">
       <div class="col-sm-10">
         <%= form.button "<i class='fas fa-save'></i> #{t('defaults.submit', model: t('.resource'))}".html_safe,

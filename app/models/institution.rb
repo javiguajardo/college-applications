@@ -17,4 +17,7 @@ class Institution < ApplicationRecord
   validates :application_deadline, presence: true, format: { with: /\A\d{4}-\d{2}-\d{2}\z/ }
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :location, presence: true
+
+  has_many :student_applications, dependent: :destroy
+  has_many :students, through: :student_applications
 end
