@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-header">
+    <h3><%= @student.name %></h3>
+  </div>
+  <div class="card-body">
+    <p>
+      <strong>Email:</strong>
+      <%= @student.email %>
+    </p>
+
+    <p>
+      <strong>Phone number:</strong>
+      <%= @student.phone_number %>
+    </p>
+
+    <p>
+      <strong>Date of birth:</strong>
+      <%= format_date(@student.date_of_birth) %>
+    </p>
+
+    <p>
+      <strong>Graduation date:</strong>
+      <%= format_date(@student.graduation_date) %>
+    </p>
+
+  </div>
+  <div class="card-footer">
+    <%= link_to "<i class='fas fa-edit'></i> Edit".html_safe, edit_student_path(@student),
+                class: 'btn btn-sm btn-secondary btn-flat', title: t('defaults.edit') %>
+    <%= link_to "<i class='fas fa-list-ul'></i> #{t('students.index.title')}".html_safe, students_path,
+                class: 'btn btn-sm btn-info btn-flat', title: t('students.form.students_list') %>
+  </div>
+</div>

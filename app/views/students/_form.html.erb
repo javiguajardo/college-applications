@@ -1,0 +1,64 @@
+<div class="card-body">
+  <%= form_for(student, class: 'form-horizontal', validate: true) do |form| %>
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.label :name, class: 'col-form-label col-form-label-sm' %>
+      </div>
+      <div class="col-sm-10">
+        <%= form.text_field :name, class: 'form-control form-control-sm', placeholder: :name, autofocus: true %>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.label :email, class: 'col-form-label col-form-label-sm' %>
+      </div>
+      <div class="col-sm-10">
+        <%= form.email_field :email, class: 'form-control form-control-sm', placeholder: :email %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.label :phone_number, class: 'col-form-label col-form-label-sm' %>
+      </div>
+      <div class="col-sm-10">
+        <%= form.telephone_field :phone_number, class: 'form-control form-control-sm phone-mask',
+                                 placeholder: 'Eg. (123) 123 - 1234', validate: false %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.label :date_of_birth, class: 'col-form-label col-form-label-sm' %>
+      </div>
+      <div class="col-sm-10">
+        <%= form.text_field :date_of_birth, class: 'form-control form-control-sm datepicker',
+                            placeholder: 'Eg. 2018-05-12' %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <%= form.label :graduation_date, class: 'col-form-label col-form-label-sm' %>
+      </div>
+      <div class="col-sm-10">
+        <%= form.text_field :graduation_date, class: 'form-control form-control-sm datepicker',
+                            placeholder: 'Eg. 2018-05-12' %>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <%= form.button "<i class='fas fa-save'></i> #{t('defaults.submit', model: t('.resource'))}".html_safe,
+                        class: 'btn btn-primary btn-flat', type: 'submit', title: t('defaults.submit') %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="card-footer">
+  <%= link_to "<i class='fas fa-list-ul'></i> #{t('students.index.title')}".html_safe, students_path,
+              class: 'btn btn-sm btn-secondary btn-flat', title: t('.students_list') %>
+</div>

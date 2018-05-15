@@ -89,3 +89,5 @@ gem 'seedbank', '~> 0.4.0'
 # will_paginate provides a simple API for performing paginated queries
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'bootstrap-will_paginate'
+# An inputmask helps the user with the input by ensuring a predefined format.
+gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'

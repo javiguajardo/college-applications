@@ -1,0 +1,10 @@
+en:
+  students:
+    index:
+      title: Students
+    form:
+      students_list: Students list
+    new:
+      title: New Student
+    edit:
+      title: Edit Student

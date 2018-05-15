@@ -19,4 +19,6 @@
 //= require bootstrap-datepicker
 //= require rails.validations
 //= require select2
+//= require inputmask
+//= require jquery.inputmask
 //= require_tree .

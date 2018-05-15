@@ -1,0 +1,51 @@
+<div class="card">
+  <div class="card-header">
+    <h3><%= t('.title') %></h3>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover table-sm">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone number</th>
+        <th scope="col">Date of birth</th>
+        <th scope="col">Graduation date</th>
+        <th scope="col" class="text-center actions_header">Actions</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @students.each do |student| %>
+        <tr class="show-actions">
+          <td><%= student.name %></td>
+          <td><%= student.email %></td>
+          <td><%= student.phone_number %></td>
+          <td><%= format_date(student.date_of_birth) %></td>
+          <td><%= format_date(student.graduation_date) %></td>
+          <td>
+            <div class="actions">
+              <%= link_to icon('fas', 'eye'), student, class: 'btn-success btn-simple', title: t('defaults.show') %>
+              <%= link_to icon('fas', 'edit'), edit_student_path(student), class: 'btn-primary btn-simple',
+                          title: t('defaults.edit') %>
+              <%= link_to icon('fas', 'trash'), student, method: :delete, data: {confirm: 'Are you sure?'},
+                          class: 'btn-danger btn-simple', title: t('defaults.delete') %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+  </div>
+  <div class="card-footer">
+    <%= link_to new_student_path, class: 'btn btn-sm btn-info btn-flat', title: t('defaults.new') do %>
+      <%= icon('fas', 'plus') %>
+      <span class="hidden-xs">New</span>
+    <% end %>
+    <div class="float-right">
+      <%= custom_paginator @students %>
+    </div>
+  </div>
+</div>

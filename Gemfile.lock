@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/knapo/jquery-inputmask-rails.git
+  revision: 20df4fa329da0235b1e2ae3f0e225ce33fcc029c
+  specs:
+    jquery-inputmask-rails (0.4.0)
+      railties (>= 3.1)
+
+GIT
   remote: https://github.com/stympy/faker.git
   revision: 80152e86aa698d152ced54043c0e2a71c5f67440
   branch: master
@@ -297,6 +304,7 @@ DEPENDENCIES
   faker!
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.5)
+  jquery-inputmask-rails!
   jquery-rails
   launchy (~> 2.4, >= 2.4.3)
   listen (>= 3.0.5, < 3.2)
