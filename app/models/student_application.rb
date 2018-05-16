@@ -21,8 +21,13 @@
 #
 
 class StudentApplication < ApplicationRecord
+  validates_presence_of :student_id, :institution_id
+
   belongs_to :student
   belongs_to :institution
+
+  delegate :name, :graduation_date, to: :student, prefix: true, allow_nil: true
+  delegate :name, :application_deadline, to: :institution, prefix: true, allow_nil: true
 
   enum status: [:canceled, :accepted]
 end

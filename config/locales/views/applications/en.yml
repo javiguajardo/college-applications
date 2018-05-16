@@ -2,3 +2,6 @@ en:
   applications:
     index:
       title: Student Applications
+      one: application
+      plural: applications
+      graduation_passed: "Graduation date has passed: %{date}"
