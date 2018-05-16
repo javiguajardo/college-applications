@@ -4,7 +4,12 @@ en:
       title: Students
     form:
       students_list: Students list
+      add_application: Add application
     new:
       title: New Student
     edit:
       title: Edit Student
+    student_application_fields:
+      institution: Institution
+      remove: Remove
+      application: Application

@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on 'turbolinks:load', ->
   addFields()
+  removeFields()
   return
 
 addFields = ->
@@ -15,6 +16,18 @@ addFields = ->
     
     $this.closest('.form-group').before($this.data('fields').replace(regexp, time))
     select2Init()
+    e.preventDefault()
+    return
+  return
+
+removeFields = ->
+  $form = $('form')
+
+  $form.on 'click', '.remove_fields', (e) ->
+    $this = $(this)
+
+    $this.prev('input[type=hidden]').val('1')
+    $this.closest('fieldset').hide()
     e.preventDefault()
     return
   return

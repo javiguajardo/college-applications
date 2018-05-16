@@ -23,7 +23,7 @@ class Student < ApplicationRecord
 
   has_many :student_applications, dependent: :destroy
   has_many :institutions, through: :student_applications
-  accepts_nested_attributes_for :student_applications
+  accepts_nested_attributes_for :student_applications, allow_destroy: true
 
   private
 
