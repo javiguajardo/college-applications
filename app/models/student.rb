@@ -25,6 +25,8 @@ class Student < ApplicationRecord
   has_many :institutions, through: :student_applications
   accepts_nested_attributes_for :student_applications, allow_destroy: true
 
+  before_save :titleize_name
+
   private
 
   def graduation_date_after_date_of_birth?
@@ -33,5 +35,9 @@ class Student < ApplicationRecord
     if graduation_date < date_of_birth
       errors.add :graduation_date, 'must be after date of birth'
     end
+  end
+
+  def titleize_name
+    self.name = self.name.titleize
   end
 end

@@ -21,7 +21,7 @@
 #
 
 class StudentApplication < ApplicationRecord
-  validates_presence_of :student_id, :institution_id
+  validates_presence_of :institution_id
 
   belongs_to :student
   belongs_to :institution

@@ -8,7 +8,7 @@ module ApplicationsHelper
   end
 
   def days_until_graduation(graduation_date)
-    return "#{(Date.current - graduation_date).to_i} days until graduation" if Date.current < graduation_date
+    return "#{(graduation_date - Date.current).to_i} days until graduation: #{format_date(graduation_date)}" if Date.current < graduation_date
     t('applications.index.graduation_passed', date: format_date(graduation_date))
   end
 end
