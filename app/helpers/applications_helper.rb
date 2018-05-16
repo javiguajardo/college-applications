@@ -1,13 +1,14 @@
 module ApplicationsHelper
-  def link_to_add_fields(name, f, association)
-    new_object = f.object.send(association).klass.new
-    id = new_object.object_id
+  def student_name(student_id)
+    Student.find_by_id(student_id).name
+  end
 
-    fields = f.fields_for(association, new_object, child_index: id) do |builder|
-      render(association.to_s.singularize + '_fields', f: builder)
-    end
+  def student_graduation_date(student_id)
+    Student.find_by_id(student_id).graduation_date
+  end
 
-    link_to(name, '#', class: 'add_fields btn btn-sm btn-info btn-flat',
-            data: { id: id, fields: fields.gsub('\n', '')})
+  def days_until_graduation(graduation_date)
+    return "#{(Date.current - graduation_date).to_i} days until graduation" if Date.current < graduation_date
+    t('applications.index.graduation_passed', date: format_date(graduation_date))
   end
 end

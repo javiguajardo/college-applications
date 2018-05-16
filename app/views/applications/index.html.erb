@@ -2,4 +2,36 @@
   <div class="card-header">
     <h3><%= t('.title') %></h3>
   </div>
+  <div class="card-body">
+    <div class="row">
+      <% @applications.group_by(&:student_id).each do |student_id, applications| %>
+        <div class="col-sm-4">
+          <div class="card student-applications">
+            <div class="card-header bg-transparent">
+              <h5 class="card-title"><%= link_to student_name(student_id),
+                                                 student_path(student_id) %></h5>
+              <p class="card-text"><%= days_until_graduation(student_graduation_date(student_id)) %></p>
+
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled">
+                <% applications.each do |application| %>
+                  <li>
+                    <%= link_to application.institution_name, institution_path(application.institution_id) %> -
+                    <span class="font-weight-bold">Deadline: <%= format_date(application.institution_application_deadline) %></span>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-footer">
+    <%= pluralize(@applications.count, t('.one'), plural: t('.plural')) %>
+    <div class="float-right">
+      <%= custom_paginator @applications %>
+    </div>
+  </div>
 </div>
