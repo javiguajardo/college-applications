@@ -49,13 +49,15 @@
       </div>
     </div>
 
+    <hr/>
+
     <%= form.fields_for :student_applications do |application| %>
       <%= render 'student_application_fields', f: application %>
     <% end %>
 
     <div class="form-group row">
       <div class="col-sm-10">
-        <%= link_to_add_fields('Add application', form, :student_applications) %>
+        <%= link_to_add_fields(t('.add_application'), form, :student_applications) %>
 
       </div>
     </div>
