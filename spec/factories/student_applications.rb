@@ -1,7 +1,5 @@
 FactoryGirl.define do
   factory :student_application do
-    student nil
-    institution nil
-    status ""
+    association :student, :institution
   end
 end
