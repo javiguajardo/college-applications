@@ -1,3 +1,20 @@
 // Place all the styles related to the applications controller here.
 // They will automatically be included in application.css.
 // You can use Sass here: http://sass-lang.com/
+.student-applications
+  margin-bottom: 20px
+
+  a:link, a:visited
+    color: #17a2b8
+    text-decoration: none
+
+  a:hover
+    color: lighten(#17a2b8, 10%)
+
+@media (min-width: 992px)
+  .row.auto-clear .col-sm-4:nth-child(3n+1)
+    clear: left
+
+@media (max-width: 991px)
+  .row.auto-clear .col-sm-4:nth-child(2n+1)
+    clear: left
