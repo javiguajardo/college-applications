@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature "Students", type: :feature do
+  let!(:institution) { FactoryGirl.create(:institution) }
+
   scenario 'user creates a student' do
     visit new_student_path
 
@@ -10,6 +12,7 @@ RSpec.feature "Students", type: :feature do
       fill_in 'Phone number', with: '(636) 109 - 3561'
       fill_in 'Date of birth', with: '1994-02-02'
       fill_in 'Graduation date', with: '2017-05-30'
+      find('.custom-select option', text: institution.name).select_option
       click_button 'Submit'
     }.to change(Student, :count).by(1)
 
